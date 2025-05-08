@@ -12,7 +12,7 @@ export default function PedestrianPage() {
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="text-justify overflow-hidden mb-4 text-red-500">
         Disclaimer: This is a demo application. 
-        The detection model is not trained for production use and may not perform accurately.To use the app  click  yes for permission. Wait for the image to load, it could take several minutes.</div>
+        The detection model is not trained for production use and may not perform accurately.To use the app  click  yes for to give the browser permission. Wait for the image to load.</div>
       <h1 className="text-xl font-bold mb-4">Human Detection Model</h1>
       <div className="w-full max-w-[900px]">
         {/* Render the dynamically imported component */}
