@@ -1,23 +1,21 @@
 "use client";
 
-import dynamic from 'next/dynamic'
+'use client';
 
-// Dynamically import the PedestrianDetector component
-const PedestrianDetector = dynamic(() => import('@/app/components/PedestrianDetection'), {
-  ssr: false, // Disable server-side rendering to ensure it runs on the client
-})
+import dynamic from 'next/dynamic';
+import React from 'react';
+
+const PedestrianDetector = dynamic(() => import('@/app/components/PedestrianDetection'), { 
+  ssr: false, // disable server-side rendering
+  loading: () => <p>Loading camera...</p>,
+});
 
 export default function PedestrianPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      <div className="text-justify overflow-hidden mb-4 text-red-500">
-        Disclaimer: This is a demo application. 
-        The detection model is not trained for production use and may not perform accurately.To use the app  click  yes for to give the browser permission. Wait for the image to load.</div>
       <h1 className="text-xl font-bold mb-4">Human Detection Model</h1>
-      <div className="w-full max-w-[900px]">
-        {/* Render the dynamically imported component */}
-        <PedestrianDetector />
+      <PedestrianDetector />
       </div>
-    </div>
-  )
-}
+    );
+  }
+
